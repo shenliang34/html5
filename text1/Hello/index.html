@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title> 第一个网页 </title>
+		<canvas id="myCanvas" style="width:auto;height: auto;border: 1px solid #000000;"></canvas>
+		<script type="text/javascript">
+			function log() {
+				alert("log");
+			}
+			var canvas = document.getElementById("myCanvas");
+
+			function drawRect() {
+				var draw = canvas.getContext("2d");
+				draw.fillStyle = "red";
+				draw.fillRect(0, 0, 80, 80);
+			}
+			//鼠标移入
+			function canvasOverMouseEvent(e) {
+				var can = document.getElementById("canvans");
+				x = e.clientX;
+				y = e.clientY;
+				can.innerHTML = "content:{ x:" + x + ",y:" + y + "}"
+			}
+			//鼠标移除
+			function canvasOutMouseEvent() {
+				var can = document.getElementById("canvans");
+				can.innerHTML = "";
+			}
+			//划线
+			function drawLine() {
+				var draw = canvas.getContext("2d");
+				draw.moveTo(30, 30);
+				draw.lineTo(50, 50);
+				draw.lineTo(30, 50);
+				draw.stroke();
+			}
+			//添加图片
+			//需要在加载完成再画进canvas
+			function addImage() {
+				var draw = canvas.getContext("2d");
+				var image = new Image();
+				image.src = "img/HBuilder.png";
+				image.onload = function(){
+					draw.drawImage(image, 0, 0);
+					console.log("成功添加图片");
+				}
+			}
+			
+			//画圆形
+			function drawCircle()
+			{
+				var draw = canvas.getContext("2d");
+				draw.fillStyle = "red";
+				draw.beginPath();
+				draw.arc(90,40,20,0,Math.PI * 2,false);
+				draw.closePath();
+				draw.fill();
+			}
+			
+			//渐变
+			function drawLinearGradient()
+			{
+				var draw = canvas.getContext("2d");
+				var grd = draw.createLinearGradient(0,0,150,50);
+				grd.addColorStop(0,"#000000");
+				grd.addColorStop(1,"#0000FF");
+				draw.fillStyle = grd;
+				draw.fillRect(0,0,150,50);
+			}
+			
+			//存数据
+			function writeName()
+			{
+//				localStorage.lastname = "shenliangliang";
+//				document.write("Last name:" + localStorage.lastname);
+				
+				if(localStorage.page)
+				{
+					localStorage.page = Number(localStorage.page) + 1;
+				}
+				else
+				{
+					localStorage.page = 1;
+				}
+				
+				if(sessionStorage.page)
+				{
+					sessionStorage.page = Number(sessionStorage.page) + 1;	
+				}
+				else
+				{
+					sessionStorage.page = 1;
+				}
+				
+				document.write("local 存储 ===访问次数：" + localStorage.page + "</br>");
+				document.write("session 存储 ===访问次数：" + sessionStorage.page);
+				
+			}
+		</script>
+		<p>刷新浏览器 session 存在，关闭 便会重置</p>
+		<style type="text/css">
+			body {
+				font-size: 70%;
+				font-family: verdana, helvetica, arial, sans-serif;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 0px;">
+		<input type="button" value="划线" onclick="drawLine()" />
+		<input type="button" value="添加图片" onclick="addImage()" />
+		<input type="button" value="画圆" onclick="drawCircle()" />
+		<input type="button" value="画渐变" onclick="drawLinearGradient()" />
+		<input type="button" value="存数据" onclick="writeName()" />
+		<p> 鼠标悬停 </p>
+		<div id="coordiv" style="float:left;width: 300px; height:300px;border: 1px solid #000000" onmousemove="canvasOverMouseEvent(event)" onmouseout="canvasOutMouseEvent()"></div>
+		<div id="canvans"></div>
+		
+		<form action="/exc" method="get">
+			<input type="email" name="userMail" /><br />
+			<input type="month" name="user_date"/><br />
+			<input type="week" name="user_week"/><br />
+			<input type="time" name="user_time"/><br />
+			<input type="submit"/>
+		</form>
+		
+	</body>
+
+</html>
