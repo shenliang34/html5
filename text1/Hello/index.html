@@ -69,7 +69,7 @@
 				draw.fillStyle = grd;
 				draw.fillRect(0,0,150,50);
 			}
-			
+			//fags
 			//存数据
 			function writeName()
 			{
@@ -118,12 +118,41 @@
 		<div id="coordiv" style="float:left;width: 300px; height:300px;border: 1px solid #000000" onmousemove="canvasOverMouseEvent(event)" onmouseout="canvasOutMouseEvent()"></div>
 		<div id="canvans"></div>
 		
-		<form action="/exc" method="get">
-			<input type="email" name="userMail" /><br />
+		<form>
+			<!--<input type="email" name="userMail" /><br />
 			<input type="month" name="user_date"/><br />
 			<input type="week" name="user_week"/><br />
 			<input type="time" name="user_time"/><br />
-			<input type="submit"/>
+			<input type="datetime" name="user_datetime"/><br />
+			<input type="datetime-local" name="user_datetime_local"/><br />
+			<input type="search" name="user_search"/><br />-->
+			<!--<input type="url" name="user_url"/><br />-->
+			<!--<input type="number" name="user_number"/><br />
+			<input type="range" name="user_range" max="10" min="1" step="1" value="1"/><br />-->
+			<!--webpage:<input type="url" list="url_list" name="link" />
+			<datalist id="url_list">
+				不支持
+				<option label="baidu" value="www.baidu.com"/>
+				<option label="google" value="www.google.com"/>
+				<option label="58" value="www.58.com"/>
+			</datalist>-->
+			first name:<input type="text" name="first_name" autocomplete="on" /><br />
+                                                                                      <!--
+                                                                                      	作者：971935832@qq.com
+                                                                                      	时间：2016-05-31
+                                                                                      	描述：自动填充
+                                                                                      -->
+			next name:<input type="text" name="next_name"  autocomplete="on"/>
+			email : <input type="text" name="email" autofocus="autofocus" />
+                                                                            <!--
+                                                                            	作者：971935832@qq.com
+                                                                            	时间：2016-05-31
+                                                                            	描述：自动聚焦
+                                                                            -->
+           	
+			<!--<input type="submit"/>-->
+			<input type="image" src="img/HBuilder.png" width="114" height="114" />
+			<input type="file" src="img" multiple="multiple" name="image" value="选择" />
 		</form>
 		
 	</body>
