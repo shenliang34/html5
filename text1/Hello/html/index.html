@@ -104,6 +104,11 @@
 			{
 				console.log("onResize");
 			}
+			
+			function onBlurHandler()
+			{
+				console.log("失去焦点了！")
+			}
 		</script>
 		<p>刷新浏览器 session 存在，关闭 便会重置</p>
 		<style type="text/css">
@@ -112,7 +117,7 @@
 				font-family: verdana, helvetica, arial, sans-serif;
 			}
 		</style>
-		<base href="http://www.baidu.com/" target="_blank"/>
+		<!--<base href="http://www.baidu.com/" target="_blank"/>-->
 	</head>
 
 	<body style="margin: 0px;">
@@ -181,6 +186,36 @@
 		</form>
 		<audio src="music/alarm.wav"  controls="controls" loop="loop"> 你的浏览器不支持audio </audio>
 		<bdo dir="rtl"> 发警告过奇偶我埃及佛教 </bdo>
+		
+		<br />
+		<a href="text.html" target="_blank"> 进入测试网页</a>
+		<frame onblur="onBlurHandler" src="index.html#canvans"> <frame />
+		<embed src="swf/change.swf" width="500px" height="500px"></embed>
+		<dl>
+			<dt>
+				计算机：
+			</dt>
+			<dd>
+				用来计算的机器
+			</dd>
+			<dt>
+				显示器：
+			</dt>
+			<dd>
+				显示的机器
+			</dd>
+		</dl>
+		<fieldset>
+		<legend> 信息</legend>
+		<form>
+			<label> 身高：<input type="text"/></label><br />
+			是否喜欢汽车<input type="checkbox" />
+		</form>
+		<form>
+			<label> 学历：<input type="text"/></label>
+			密码<input type="password" />
+		</form>
+		</fieldset>
 	</body>
 
 </html>
