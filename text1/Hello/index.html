@@ -98,11 +98,7 @@
 				
 				document.write("local 存储 ===访问次数：" + localStorage.page + "</br>");
 				document.write("session 存储 ===访问次数：" + sessionStorage.page);
-			}
-			
-			function onResize()
-			{
-				console.log("onResize");
+				
 			}
 		</script>
 		<p>刷新浏览器 session 存在，关闭 便会重置</p>
@@ -112,7 +108,6 @@
 				font-family: verdana, helvetica, arial, sans-serif;
 			}
 		</style>
-		<base href="http://www.baidu.com/" target="_blank"/>
 	</head>
 
 	<body style="margin: 0px;">
@@ -122,10 +117,10 @@
 		<input type="button" value="画渐变" onclick="drawLinearGradient()" />
 		<input type="button" value="存数据" onclick="writeName()" />
 		<p> 鼠标悬停 </p>
-		<!--<div id="coordiv" style="float:left;width: 300px; height:300px;border: 1px solid #000000" onmousemove="canvasOverMouseEvent(event)" onmouseout="canvasOutMouseEvent()"></div>-->
+		<div id="coordiv" style="float:left;width: 300px; height:300px;border: 1px solid #000000" onmousemove="canvasOverMouseEvent(event)" onmouseout="canvasOutMouseEvent()"></div>
 		<div id="canvans"></div>
 		
-		<form novalidate="novalidate">
+		<form>
 			<!--<input type="email" name="userMail" /><br />
 			<input type="month" name="user_date"/><br />
 			<input type="week" name="user_week"/><br />
@@ -156,31 +151,12 @@
                                                                             	时间：2016-05-31
                                                                             	描述：自动聚焦
                                                                             -->
-           	pattern:<input type="text" name="parrern_Code" pattern="[A-z{3}]" title="Three latter country code"/>
-           	<br />name:<input type="search" placeholder="输入名字" /><br />
-           	required:<input type="text"  name="required_code" required="required" />
-			<input type="submit"/><br />
-			<font size="4" color="black"><a href="https://www.baidu.com" target="_blank">百度一下</a></font>
-			<address>
-				wwww
-			</address>
-			<br />My dog is a <abbr title='labrador retriever'>lab</abbr>
-			<br /><acronym title="World Wide Web">www</acronym>
-			<input type="image" src="img/HBuilder.png" width="114" height="114" alt="fafaff"/>
+           	
+			<!--<input type="submit"/>-->
+			<input type="image" src="img/HBuilder.png" width="114" height="114" />
 			<input type="file" src="img" multiple="multiple" name="image" value="选择" />
-			
-			<!--可点击区域-->
-			<img src="img/HBuilder.png" border="0" usemap="#plantmap" alt="planets" />
-			<map name="plantmap" id="plantmap">
-				<area shape="circle" coords="57,57,57" href="http://www.baidu.com" target="_blank" alt="Venus"/>
-			</map>
-			<article>
-				<a href="http://www.baidu.com">百度</a><br />
-				wfafgasfdfsfgsgfsgsdgdsf.....
-			</article>
 		</form>
-		<audio src="music/alarm.wav"  controls="controls" loop="loop"> 你的浏览器不支持audio </audio>
-		<bdo dir="rtl"> 发警告过奇偶我埃及佛教 </bdo>
+		
 	</body>
 
 </html>
